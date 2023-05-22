@@ -642,7 +642,11 @@ button:hover {
     margin-top: 40px;
 }
 
-.footer .socials-item a {
+.footer .socials-item + .socials-item {
+    margin-left: 16px;
+}
+
+.footer .social-link {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -650,9 +654,10 @@ button:hover {
     height: 28px;
     transition: 0.2s;
     border-radius: 2px;
+    background: #f9f9f9;
 }
 
-.footer .socials-item:hover {
+.footer .social-link:hover {
     background-color: #ebebeb;
     border-radius: 3px;
 }
