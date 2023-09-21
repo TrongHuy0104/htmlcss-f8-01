@@ -7,7 +7,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&display=swap"
             rel="stylesheet"
         />
         <!-- favicon -->
@@ -87,27 +87,50 @@
             content="./assets/favicon/ms-icon-144x144.png"
         />
         <meta name="theme-color" content="#ffffff" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
         <link rel="stylesheet" href="./assets/css/reset.css" />
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
         <link rel="stylesheet" href="./assets/css/style.css" />
-        <title>Document</title>
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
+        <title>Besnik</title>
     </head>
     <body>
-        <div class="fixed-header">
+        <!-- PC Header -->
+        <header class="fixed-header">
             <div class="content">
                 <!-- Navbar -->
                 <nav class="navbar">
+                    <!-- Tablet / Mobile Menu -->
+                    <label for="menu-input" class="menu-checkbox">
+                        <i class="fa-solid fa-bars"></i>
+                    </label>
                     <!-- Logo -->
                     <a href="#">
-                        <img src="./assets/img/logo.svg" alt="Besnik." />
+                        <img
+                            class="logo"
+                            src="./assets/img/logo.svg"
+                            alt="Besnik."
+                        />
                     </a>
                     <!-- Navigation -->
-                    <ul>
+                    <ul class="navbar__list">
                         <li><a href="#">Home</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="#resources">Resources</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li>
+                            <a href="#!" class="show-on-mobile seperate"
+                                >Sign in</a
+                            >
+                        </li>
+                        <li><a href="#!" class="show-on-mobile">Sign up</a></li>
                     </ul>
                     <!-- Action -->
                     <div class="action">
@@ -120,7 +143,27 @@
                     </div>
                 </nav>
             </div>
-        </div>
+        </header>
+
+        <!-- Tablet / Mobile Header -->
+        <header class="mobile-header">
+            <input type="checkbox" class="menu-input" id="menu-input" hidden />
+            <!-- Overlay -->
+            <label for="menu-input" class="menu-overlay"></label>
+            <!-- Menu Drawer -->
+            <div class="menu-drawer">
+                <!-- Logo -->
+                <a href="#">
+                    <img
+                        class="logo"
+                        src="./assets/img/logo.svg"
+                        alt="Besnik."
+                    />
+                </a>
+                <!-- Mobile Nav -->
+                <ul class="mobile-nav"></ul>
+            </div>
+        </header>
         <main>
             <!-- Hero -->
             <div class="hero-wrap">
@@ -166,7 +209,9 @@
                         <p class="desc">
                             More than 45,000+ companies trust besnik
                         </p>
-                        <p class="desc">5 Star Ratings (2k+ Review)</p>
+                        <p class="desc hide-on-mobile">
+                            5 Star Ratings (2k+ Review)
+                        </p>
                     </div>
                     <div class="images">
                         <a href="#!" class="img">
@@ -233,7 +278,7 @@
                                 alt="Renter"
                                 class="icon"
                             />
-                            <h3 class="title">renter Guides</h3>
+                            <h3 class="title">Renter Guides</h3>
                             <a href="#!" class="link">
                                 <span>How to rent</span>
                                 <img
@@ -248,7 +293,7 @@
                                 alt="Sender"
                                 class="icon"
                             />
-                            <h3 class="title">sender Guides</h3>
+                            <h3 class="title">Sender Guides</h3>
                             <a href="#!" class="link">
                                 <span>How to send</span>
                                 <img
@@ -401,6 +446,10 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="featured__cta show-on-mobile">
+                        <a href="#!" class="btn">View All Properties</a>
                     </div>
                 </div>
             </div>
@@ -704,5 +753,10 @@
                 </div>
             </div>
         </footer>
+        <script>
+            const pcNav = document.querySelector(".navbar__list");
+            const mbNav = document.querySelector(".mobile-nav");
+            mbNav.innerHTML = pcNav.innerHTML;
+        </script>
     </body>
 </html>
